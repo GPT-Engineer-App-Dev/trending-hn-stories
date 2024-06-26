@@ -52,10 +52,10 @@ const Index = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         {filteredStories.map(story => (
-          <Box key={story.id} p={4} borderWidth="1px" borderRadius="md" width="100%">
-            <Text fontSize="lg" fontWeight="bold">{story.title}</Text>
-            <Link href={story.url} color="teal.500" isExternal>Read more</Link>
-            <Text>Upvotes: {story.score}</Text>
+          <Box key={story.id} p={4} borderWidth="1px" borderRadius="md" width="100%" bg="orange.50">
+            <Text fontSize="lg" fontWeight="bold" color="orange.700">{story.title}</Text>
+            <Link href={story.url} color="orange.500" isExternal>Read more</Link>
+            <Text color="orange.600">Upvotes: {story.score}</Text>
           </Box>
         ))}
       </VStack>
