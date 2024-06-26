@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Text, VStack, Input, Box, Link, useColorMode, IconButton } from "@chakra-ui/react";
+import { Container, Text, VStack, Input, Box, Link, useColorMode, IconButton, useColorModeValue } from "@chakra-ui/react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 const Index = () => {
@@ -36,7 +36,7 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" py={8}>
+    <Container centerContent maxW="container.md" py={8} bg={useColorModeValue("orange.100", "orange.900")}>
       <VStack spacing={4} width="100%">
         <Box width="100%" display="flex" justifyContent="space-between" alignItems="center">
           <Text fontSize="2xl">Hacker News Top Stories</Text>
@@ -52,7 +52,7 @@ const Index = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         {filteredStories.map(story => (
-          <Box key={story.id} p={4} borderWidth="1px" borderRadius="md" width="100%" bg="orange.50">
+          <Box key={story.id} p={4} borderWidth="1px" borderRadius="md" width="100%" bg={useColorModeValue("orange.200", "orange.800")}>
             <Text fontSize="lg" fontWeight="bold" color="orange.700">{story.title}</Text>
             <Link href={story.url} color="orange.500" isExternal>Read more</Link>
             <Text color="orange.600">Upvotes: {story.score}</Text>
